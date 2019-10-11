@@ -1,0 +1,57 @@
+﻿
+namespace VCN64Config
+{
+    public class KeyLabel
+    {
+        public const int
+            Section = 1000,
+            Cheat = 1001,
+            Property = 2000,
+            PropertyRomOption = 2001,
+            PropertyRender = 2002,
+            PropertySound = 2003,
+            PropertyInput = 2004,
+            PropertyRSPG = 2005,
+            PropertyCmp = 2006,
+            PropertySI = 2007,
+            PropertyVI = 2008,
+            PropertyTempConfig = 2009,
+            PropertyFrameTickHack = 2010,
+            //PropertyIdle = 2011,
+            //PropertyInsertIdleInst = 2012,
+            //PropertySpecialInst = 2013,
+            //PropertyBreakBlockInst = 2014,
+            //PropertyRomHack = 2015,
+            //PropertyVertexHack = 2016,
+            //PropertyFilterHack = 2017,
+            //PropertyCheat = 2018,
+            PropertyCount = 2100,
+            PropertyAddress = 2101,
+            PropertyInst = 2102,
+            PropertyType = 2103,
+            PropertyValue = 2104,
+            PropertyJmpPC = 2105,
+            PropertyVertexCount = 2106,
+            PropertyVertexAddress = 2107,
+            PropertyFirstVertex = 2108,
+            PropertyTextureAddress = 2109,
+            PropertySumPixel = 2110,
+            PropertyData2 = 2111,
+            PropertyData3 = 2112,
+            PropertyAlphaTest = 2113,
+            PropertyMagFilter = 2114,
+            PropertyOffsetS = 2115,
+            PropertyOffsetT = 2116,
+            PropertyCheatAddr = 2117,
+            PropertyCheatValue = 2118,
+            PropertyCheatBytes = 2119,
+            String = 3000,
+            IntDEC = 3001,
+            IntHEX = 3002,
+            ByteArray = 3003,
+            Assignment = '=',
+            LeftSquareBracket = '[',
+            RightSquareBracket = ']'
+            ;
+    }
+}
