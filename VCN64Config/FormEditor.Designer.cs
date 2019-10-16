@@ -179,6 +179,7 @@
             this.labelCountFilterHack = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.labelBy = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericClipBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericClipLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericClipRight)).BeginInit();
@@ -2094,13 +2095,24 @@
             this.buttonOK.Visible = false;
             this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
-            // FormVCN64ConfigFileEditor
+            // labelBy
+            // 
+            this.labelBy.AutoSize = true;
+            this.labelBy.Location = new System.Drawing.Point(496, 289);
+            this.labelBy.Name = "labelBy";
+            this.labelBy.Size = new System.Drawing.Size(55, 13);
+            this.labelBy.TabIndex = 140;
+            this.labelBy.Text = "phacox.cll";
+            this.labelBy.Visible = false;
+            // 
+            // FormEditor
             // 
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(564, 311);
+            this.Controls.Add(this.labelBy);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.labelCountFilterHack);
             this.Controls.Add(this.labelCountVertexHack);
@@ -2130,7 +2142,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(580, 350);
             this.MinimumSize = new System.Drawing.Size(580, 350);
-            this.Name = "FormVCN64ConfigFileEditor";
+            this.Name = "FormEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VCN64Config Editor";
             ((System.ComponentModel.ISupportInitialize)(this.numericClipBottom)).EndInit();
@@ -2326,6 +2338,7 @@
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.Label labelBy;
     }
 }
 

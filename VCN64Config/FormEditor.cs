@@ -8,7 +8,7 @@ namespace VCN64Config
 {
     public partial class FormEditor : Form
     {
-        public const string Release = "1.0 debug"; //CllVersionReplace "major.minor stability"
+        public const string Release = "1.1 debug"; //CllVersionReplace "major.minor stability"
 
         private int CountIdle;
         private int CountInsertIdleInst;
@@ -70,9 +70,9 @@ namespace VCN64Config
 
             dataGridViewIdle.DefaultCellStyle.NullValue = VCN64Config.File.NullString;
             dataGridViewIdle.Columns.Add("Index", "Index");
-            dataGridViewIdle.Columns.Add("Address", "Address");
-            dataGridViewIdle.Columns.Add("Inst", "Inst");
-            dataGridViewIdle.Columns.Add("Type", "Type");
+            dataGridViewIdle.Columns.Add("Address", "Address (hex)");
+            dataGridViewIdle.Columns.Add("Inst", "Inst (hex)");
+            dataGridViewIdle.Columns.Add("Type", "Type (dec)");
             dataGridViewIdle.Columns["Index"].ValueType = typeof(int);
             dataGridViewIdle.Columns["Address"].ValueType = typeof(int);
             dataGridViewIdle.Columns["Inst"].ValueType = typeof(int);
@@ -85,10 +85,10 @@ namespace VCN64Config
 
             dataGridViewInsertIdleInst.DefaultCellStyle.NullValue = VCN64Config.File.NullString;
             dataGridViewInsertIdleInst.Columns.Add("Index", "Index");
-            dataGridViewInsertIdleInst.Columns.Add("Address", "Address");
-            dataGridViewInsertIdleInst.Columns.Add("Inst", "Inst");
-            dataGridViewInsertIdleInst.Columns.Add("Type", "Type");
-            dataGridViewInsertIdleInst.Columns.Add("Value", "Value");
+            dataGridViewInsertIdleInst.Columns.Add("Address", "Address (hex)");
+            dataGridViewInsertIdleInst.Columns.Add("Inst", "Inst (hex)");
+            dataGridViewInsertIdleInst.Columns.Add("Type", "Type (hex)");
+            dataGridViewInsertIdleInst.Columns.Add("Value", "Value (hex)");
             dataGridViewInsertIdleInst.Columns["Index"].ValueType = typeof(int);
             dataGridViewInsertIdleInst.Columns["Address"].ValueType = typeof(int);
             dataGridViewInsertIdleInst.Columns["Inst"].ValueType = typeof(int);
@@ -104,10 +104,10 @@ namespace VCN64Config
 
             dataGridViewSpecialInst.DefaultCellStyle.NullValue = VCN64Config.File.NullString;
             dataGridViewSpecialInst.Columns.Add("Index", "Index");
-            dataGridViewSpecialInst.Columns.Add("Address", "Address");
-            dataGridViewSpecialInst.Columns.Add("Inst", "Inst");
-            dataGridViewSpecialInst.Columns.Add("Type", "Type");
-            dataGridViewSpecialInst.Columns.Add("Value", "Value");
+            dataGridViewSpecialInst.Columns.Add("Address", "Address (hex)");
+            dataGridViewSpecialInst.Columns.Add("Inst", "Inst (hex)");
+            dataGridViewSpecialInst.Columns.Add("Type", "Type (dec)");
+            dataGridViewSpecialInst.Columns.Add("Value", "Value (hex)");
             dataGridViewSpecialInst.Columns["Index"].ValueType = typeof(int);
             dataGridViewSpecialInst.Columns["Address"].ValueType = typeof(int);
             dataGridViewSpecialInst.Columns["Inst"].ValueType = typeof(int);
@@ -122,10 +122,10 @@ namespace VCN64Config
 
             dataGridViewBreakBlockInst.DefaultCellStyle.NullValue = VCN64Config.File.NullString;
             dataGridViewBreakBlockInst.Columns.Add("Index", "Index");
-            dataGridViewBreakBlockInst.Columns.Add("Address", "Address");
-            dataGridViewBreakBlockInst.Columns.Add("Inst", "Inst");
-            dataGridViewBreakBlockInst.Columns.Add("Type", "Type");
-            dataGridViewBreakBlockInst.Columns.Add("JmpPC", "JmpPC");
+            dataGridViewBreakBlockInst.Columns.Add("Address", "Address (hex)");
+            dataGridViewBreakBlockInst.Columns.Add("Inst", "Inst (hex)");
+            dataGridViewBreakBlockInst.Columns.Add("Type", "Type (dec)");
+            dataGridViewBreakBlockInst.Columns.Add("JmpPC", "JmpPC (hex)");
             dataGridViewBreakBlockInst.Columns["Index"].ValueType = typeof(int);
             dataGridViewBreakBlockInst.Columns["Address"].ValueType = typeof(int);
             dataGridViewBreakBlockInst.Columns["Inst"].ValueType = typeof(int);
@@ -140,9 +140,9 @@ namespace VCN64Config
 
             dataGridViewRomHack.DefaultCellStyle.NullValue = VCN64Config.File.NullString;
             dataGridViewRomHack.Columns.Add("Index", "Index");
-            dataGridViewRomHack.Columns.Add("Address", "Address");
-            dataGridViewRomHack.Columns.Add("Type", "Type");
-            dataGridViewRomHack.Columns.Add("Value", "Value");
+            dataGridViewRomHack.Columns.Add("Address", "Address (hex)");
+            dataGridViewRomHack.Columns.Add("Type", "Type (dec)");
+            dataGridViewRomHack.Columns.Add("Value", "Value\n(byte array)");
             dataGridViewRomHack.Columns["Index"].ValueType = typeof(int);
             dataGridViewRomHack.Columns["Address"].ValueType = typeof(int);
             dataGridViewRomHack.Columns["Type"].ValueType = typeof(int);
@@ -154,11 +154,11 @@ namespace VCN64Config
 
             dataGridViewVertexHack.DefaultCellStyle.NullValue = VCN64Config.File.NullString;
             dataGridViewVertexHack.Columns.Add("Index", "Index");
-            dataGridViewVertexHack.Columns.Add("VertexCount", "VertexCount");
-            dataGridViewVertexHack.Columns.Add("VertexAddress", "VertexAddress");
-            dataGridViewVertexHack.Columns.Add("TextureAddress", "TextureAddress");
-            dataGridViewVertexHack.Columns.Add("FirstVertex", "FirstVertex");
-            dataGridViewVertexHack.Columns.Add("Value", "Value");
+            dataGridViewVertexHack.Columns.Add("VertexCount", "VertexCount\n(dec)");
+            dataGridViewVertexHack.Columns.Add("VertexAddress", "VertexAddress\n(hex)");
+            dataGridViewVertexHack.Columns.Add("TextureAddress", "TextureAddress\n(hex)");
+            dataGridViewVertexHack.Columns.Add("FirstVertex", "FirstVertex\n(byte array)");
+            dataGridViewVertexHack.Columns.Add("Value", "Value\n(byte array)");
             dataGridViewVertexHack.Columns["Index"].ValueType = typeof(int);
             dataGridViewVertexHack.Columns["VertexCount"].ValueType = typeof(int);
             dataGridViewVertexHack.Columns["VertexAddress"].ValueType = typeof(int);
@@ -173,14 +173,14 @@ namespace VCN64Config
 
             dataGridViewFilterHack.DefaultCellStyle.NullValue = VCN64Config.File.NullString;
             dataGridViewFilterHack.Columns.Add("Index", "Index");
-            dataGridViewFilterHack.Columns.Add("TextureAddress", "TextureAddress");
-            dataGridViewFilterHack.Columns.Add("SumPixel", "SumPixel");
-            dataGridViewFilterHack.Columns.Add("Data2", "Data2");
-            dataGridViewFilterHack.Columns.Add("Data3", "Data3");
-            dataGridViewFilterHack.Columns.Add("AlphaTest", "AlphaTest");
-            dataGridViewFilterHack.Columns.Add("MagFilter", "MagFilter");
-            dataGridViewFilterHack.Columns.Add("OffsetS", "OffsetS");
-            dataGridViewFilterHack.Columns.Add("OffsetT", "OffsetT");
+            dataGridViewFilterHack.Columns.Add("TextureAddress", "TextureAddress\n(hex)");
+            dataGridViewFilterHack.Columns.Add("SumPixel", "SumPixel\n(hex)");
+            dataGridViewFilterHack.Columns.Add("Data2", "Data2\n(hex)");
+            dataGridViewFilterHack.Columns.Add("Data3", "Data3\n(hex)");
+            dataGridViewFilterHack.Columns.Add("AlphaTest", "AlphaTest\n(dec)");
+            dataGridViewFilterHack.Columns.Add("MagFilter", "MagFilter\n(dec)");
+            dataGridViewFilterHack.Columns.Add("OffsetS", "OffsetS\n(hex)");
+            dataGridViewFilterHack.Columns.Add("OffsetT", "OffsetT\n(hex)");
             dataGridViewFilterHack.Columns["Index"].ValueType = typeof(int);
             dataGridViewFilterHack.Columns["TextureAddress"].ValueType = typeof(int);
             dataGridViewFilterHack.Columns["SumPixel"].ValueType = typeof(int);
@@ -202,10 +202,10 @@ namespace VCN64Config
 
             dataGridViewCheat.DefaultCellStyle.NullValue = VCN64Config.File.NullString;
             dataGridViewCheat.Columns.Add("Index", "Index");
-            dataGridViewCheat.Columns.Add("N", "N");
-            dataGridViewCheat.Columns.Add("Addr", "Addr");
-            dataGridViewCheat.Columns.Add("Value", "Value");
-            dataGridViewCheat.Columns.Add("Bytes", "Bytes");
+            dataGridViewCheat.Columns.Add("N", "N (dec)");
+            dataGridViewCheat.Columns.Add("Addr", "Addr (hex)");
+            dataGridViewCheat.Columns.Add("Value", "Value (hex)");
+            dataGridViewCheat.Columns.Add("Bytes", "Bytes (dec)");
             dataGridViewCheat.Columns["Index"].ValueType = typeof(int);
             dataGridViewCheat.Columns["N"].ValueType = typeof(int);
             dataGridViewCheat.Columns["Addr"].ValueType = typeof(int);
@@ -319,6 +319,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
+            labelBy.Visible = false;
         }
 
         private void ButtonRender_Click(object sender, EventArgs e)
@@ -352,6 +353,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
+            labelBy.Visible = false;
         }
 
         private void ButtonOthers_Click(object sender, EventArgs e)
@@ -385,6 +387,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
+            labelBy.Visible = false;
         }
 
         private void ButtonIdle_Click(object sender, EventArgs e)
@@ -418,6 +421,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
+            labelBy.Visible = false;
         }
 
         private void ButtonInsertIdleInst_Click(object sender, EventArgs e)
@@ -451,6 +455,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
+            labelBy.Visible = false;
         }
 
         private void ButtonSpecialInst_Click(object sender, EventArgs e)
@@ -484,6 +489,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
+            labelBy.Visible = false;
         }
 
         private void ButtonBreakBlockInst_Click(object sender, EventArgs e)
@@ -517,6 +523,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
+            labelBy.Visible = false;
         }
 
         private void ButtonRomHack_Click(object sender, EventArgs e)
@@ -550,6 +557,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
+            labelBy.Visible = false;
         }
 
         private void ButtonVertexHack_Click(object sender, EventArgs e)
@@ -583,6 +591,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
+            labelBy.Visible = false;
         }
 
         private void ButtonFilterHack_Click(object sender, EventArgs e)
@@ -616,6 +625,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = true;
             labelCountFilterHack.Visible = true;
             dataGridViewCheat.Visible = false;
+            labelBy.Visible = false;
         }
 
         private void ButtonCheat_Click(object sender, EventArgs e)
@@ -649,6 +659,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = true;
+            labelBy.Visible = true;
         }
 
         #endregion
@@ -1627,7 +1638,7 @@ namespace VCN64Config
                     sw.WriteLine("Address" + i.ToString() + " = 0x" + ((int)dataGridViewSpecialInst.Rows[i].Cells[1].Value).ToString("X"));
                     sw.WriteLine("Inst" + i.ToString() + " = 0x" + ((int)dataGridViewSpecialInst.Rows[i].Cells[2].Value).ToString("X"));
                     sw.WriteLine("Type" + i.ToString() + " = " + ((int)dataGridViewSpecialInst.Rows[i].Cells[3].Value).ToString());
-                    if (value != null)
+                    if (value != null && value != DBNull.Value)
                         sw.WriteLine("Value" + i.ToString() + " = 0x" + ((int)value).ToString("X"));
                     sw.WriteLine();
                 }
@@ -1692,13 +1703,13 @@ namespace VCN64Config
                     sw.WriteLine("SumPixel" + i.ToString() + " = 0x" + ((int)dataGridViewFilterHack.Rows[i].Cells[2].Value).ToString("X"));
                     sw.WriteLine("Data2_" + i.ToString() + " = 0x" + ((int)dataGridViewFilterHack.Rows[i].Cells[3].Value).ToString("X"));
                     sw.WriteLine("Data3_" + i.ToString() + " = 0x" + ((int)dataGridViewFilterHack.Rows[i].Cells[4].Value).ToString("X"));
-                    if (alphaTest != null)
+                    if (alphaTest != null && alphaTest != DBNull.Value)
                         sw.WriteLine("AlphaTest" + i.ToString() + " = " + ((int)alphaTest).ToString());
-                    if (magFilter != null)
+                    if (magFilter != null && magFilter != DBNull.Value)
                         sw.WriteLine("MagFilter" + i.ToString() + " = " + ((int)magFilter).ToString());
-                    if (offsetS != null)
+                    if (offsetS != null && offsetS != DBNull.Value)
                         sw.WriteLine("OffsetS" + i.ToString() + " = 0x" + ((int)offsetS).ToString("X"));
-                    if (offsetT != null)
+                    if (offsetT != null && offsetT != DBNull.Value)
                         sw.WriteLine("OffsetT" + i.ToString() + " = 0x" + ((int)offsetT).ToString("X"));
                     sw.WriteLine();
                 }

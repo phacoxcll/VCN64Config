@@ -50,16 +50,24 @@ namespace VCN64Config
         {
             int length = byteArray.Length / 2;
             StringBuilder strBuilder = new StringBuilder();
-            strBuilder.Append("a" + length.ToString() + ":");
 
-            for (int i = 0; i < length; i++)
+            if (length == 1)
             {
-                if (i % 16 == 0)
-                    strBuilder.Append("\n");
-                else
-                    strBuilder.Append(" ");
-                strBuilder.Append(byteArray[i * 2]);
-                strBuilder.Append(byteArray[i * 2 + 1]);
+                strBuilder.Append("0x");
+                strBuilder.Append(byteArray);
+            }
+            else
+            {
+                strBuilder.Append("a" + length.ToString() + ":");
+                for (int i = 0; i < length; i++)
+                {
+                    if (i % 16 == 0)
+                        strBuilder.Append("\n");
+                    else
+                        strBuilder.Append(" ");
+                    strBuilder.Append(byteArray[i * 2]);
+                    strBuilder.Append(byteArray[i * 2 + 1]);
+                }
             }
 
             return strBuilder.ToString();

@@ -5,7 +5,7 @@ namespace VCN64Config
 {
     public class File : Node
     {
-        public const string NullString = "(null)";
+        public const string NullString = "[null]";
 
         public struct SectionRomOption
         {

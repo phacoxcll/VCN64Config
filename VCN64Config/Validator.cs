@@ -16,9 +16,9 @@ namespace VCN64Config
                 {
                     source = System.IO.File.OpenText(filename);
                     Syn analizer = new Syn(source);
-                    VCN64Config.File config = analizer.Run();
-                    result = true;
+                    VCN64Config.File config = analizer.Run();                    
                     Console.WriteLine("The file \"" + filename + "\" is valid!");
+                    result = true;
                 }
                 catch (Exception e)
                 {
