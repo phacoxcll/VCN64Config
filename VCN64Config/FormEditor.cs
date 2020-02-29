@@ -8,7 +8,7 @@ namespace VCN64Config
 {
     public partial class FormEditor : Form
     {
-        public const string Release = "1.1 debug"; //CllVersionReplace "major.minor stability"
+        public const string Release = "1.2 debug"; //CllVersionReplace "major.minor stability"
 
         private int CountIdle;
         private int CountInsertIdleInst;
@@ -33,6 +33,8 @@ namespace VCN64Config
             comboBackupType.SelectedIndex = comboBackupSize.Items.Count - 1;
             comboPlayerNum.Items.Add(VCN64Config.File.NullString);
             comboPlayerNum.SelectedIndex = comboPlayerNum.Items.Count - 1;
+            comboRSPMultiCoreInt.Items.Add(VCN64Config.File.NullString);
+            comboRSPMultiCoreInt.SelectedIndex = comboRSPMultiCoreInt.Items.Count - 1;
             comboTicksPerFrame.Items.Add(VCN64Config.File.NullString);
             comboTicksPerFrame.SelectedIndex = comboTicksPerFrame.Items.Count - 1;
             comboBufFull.Items.Add(VCN64Config.File.NullString);
@@ -79,7 +81,7 @@ namespace VCN64Config
             dataGridViewIdle.Columns["Type"].ValueType = typeof(int);
             dataGridViewIdle.Columns["Index"].ReadOnly = true;
             dataGridViewIdle.Columns["Index"].Frozen = true;
-            dataGridViewIdle.Columns["Index"].Width = 32;
+            dataGridViewIdle.Columns["Index"].Width = 40;
             dataGridViewIdle.Columns["Address"].DefaultCellStyle.Format = "X";
             dataGridViewIdle.Columns["Inst"].DefaultCellStyle.Format = "X";
 
@@ -96,7 +98,7 @@ namespace VCN64Config
             dataGridViewInsertIdleInst.Columns["Value"].ValueType = typeof(int);
             dataGridViewInsertIdleInst.Columns["Index"].ReadOnly = true;
             dataGridViewInsertIdleInst.Columns["Index"].Frozen = true;
-            dataGridViewInsertIdleInst.Columns["Index"].Width = 32;
+            dataGridViewInsertIdleInst.Columns["Index"].Width = 40;
             dataGridViewInsertIdleInst.Columns["Address"].DefaultCellStyle.Format = "X";
             dataGridViewInsertIdleInst.Columns["Inst"].DefaultCellStyle.Format = "X";
             dataGridViewInsertIdleInst.Columns["Type"].DefaultCellStyle.Format = "X";
@@ -115,7 +117,7 @@ namespace VCN64Config
             dataGridViewSpecialInst.Columns["Value"].ValueType = typeof(int);
             dataGridViewSpecialInst.Columns["Index"].ReadOnly = true;
             dataGridViewSpecialInst.Columns["Index"].Frozen = true;
-            dataGridViewSpecialInst.Columns["Index"].Width = 32;
+            dataGridViewSpecialInst.Columns["Index"].Width = 40;
             dataGridViewSpecialInst.Columns["Address"].DefaultCellStyle.Format = "X";
             dataGridViewSpecialInst.Columns["Inst"].DefaultCellStyle.Format = "X";
             dataGridViewSpecialInst.Columns["Value"].DefaultCellStyle.Format = "X";
@@ -133,7 +135,7 @@ namespace VCN64Config
             dataGridViewBreakBlockInst.Columns["JmpPC"].ValueType = typeof(int);
             dataGridViewBreakBlockInst.Columns["Index"].ReadOnly = true;
             dataGridViewBreakBlockInst.Columns["Index"].Frozen = true;
-            dataGridViewBreakBlockInst.Columns["Index"].Width = 32;
+            dataGridViewBreakBlockInst.Columns["Index"].Width = 40;
             dataGridViewBreakBlockInst.Columns["Address"].DefaultCellStyle.Format = "X";
             dataGridViewBreakBlockInst.Columns["Inst"].DefaultCellStyle.Format = "X";
             dataGridViewBreakBlockInst.Columns["JmpPC"].DefaultCellStyle.Format = "X";
@@ -149,7 +151,7 @@ namespace VCN64Config
             dataGridViewRomHack.Columns["Value"].ValueType = typeof(string);
             dataGridViewRomHack.Columns["Index"].ReadOnly = true;
             dataGridViewRomHack.Columns["Index"].Frozen = true;
-            dataGridViewRomHack.Columns["Index"].Width = 32;
+            dataGridViewRomHack.Columns["Index"].Width = 40;
             dataGridViewRomHack.Columns["Address"].DefaultCellStyle.Format = "X";
 
             dataGridViewVertexHack.DefaultCellStyle.NullValue = VCN64Config.File.NullString;
@@ -167,7 +169,7 @@ namespace VCN64Config
             dataGridViewVertexHack.Columns["Value"].ValueType = typeof(string);
             dataGridViewVertexHack.Columns["Index"].ReadOnly = true;
             dataGridViewVertexHack.Columns["Index"].Frozen = true;
-            dataGridViewVertexHack.Columns["Index"].Width = 32;
+            dataGridViewVertexHack.Columns["Index"].Width = 40;
             dataGridViewVertexHack.Columns["VertexAddress"].DefaultCellStyle.Format = "X";
             dataGridViewVertexHack.Columns["TextureAddress"].DefaultCellStyle.Format = "X";
 
@@ -192,7 +194,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Columns["OffsetT"].ValueType = typeof(int);
             dataGridViewFilterHack.Columns["Index"].ReadOnly = true;
             dataGridViewFilterHack.Columns["Index"].Frozen = true;
-            dataGridViewFilterHack.Columns["Index"].Width = 32;
+            dataGridViewFilterHack.Columns["Index"].Width = 40;
             dataGridViewFilterHack.Columns["TextureAddress"].DefaultCellStyle.Format = "X";
             dataGridViewFilterHack.Columns["SumPixel"].DefaultCellStyle.Format = "X";
             dataGridViewFilterHack.Columns["Data2"].DefaultCellStyle.Format = "X";
@@ -213,7 +215,7 @@ namespace VCN64Config
             dataGridViewCheat.Columns["Bytes"].ValueType = typeof(int);
             dataGridViewCheat.Columns["Index"].ReadOnly = true;
             dataGridViewCheat.Columns["Index"].Frozen = true;
-            dataGridViewCheat.Columns["Index"].Width = 32;
+            dataGridViewCheat.Columns["Index"].Width = 40;
             dataGridViewCheat.Columns["Addr"].DefaultCellStyle.Format = "X";
             dataGridViewCheat.Columns["Value"].DefaultCellStyle.Format = "X";
 
@@ -301,8 +303,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonFilterHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonCheat.BackColor = Color.FromArgb(17, 17, 17);
-            panelRomOption.Visible = true;
-            panelRender.Visible = false;
+            groupRomOption.Visible = true;
+            groupRender.Visible = false;
             panelOthers.Visible = false;
             dataGridViewIdle.Visible = false;
             labelCountIdle.Visible = false;
@@ -319,10 +321,10 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
-            labelBy.Visible = false;
+            //labelBy.Visible = false;
         }
 
-        private void ButtonRender_Click(object sender, EventArgs e)
+        private void buttonRender_Click(object sender, EventArgs e)
         {
             buttonRomOption.BackColor = Color.FromArgb(17, 17, 17);
             buttonRender.BackColor = Color.FromArgb(16, 110, 190);
@@ -335,8 +337,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonFilterHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonCheat.BackColor = Color.FromArgb(17, 17, 17);
-            panelRomOption.Visible = false;
-            panelRender.Visible = true;
+            groupRomOption.Visible = false;
+            groupRender.Visible = true;
             panelOthers.Visible = false;
             dataGridViewIdle.Visible = false;
             labelCountIdle.Visible = false;
@@ -353,10 +355,10 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
-            labelBy.Visible = false;
+            //labelBy.Visible = false;
         }
 
-        private void ButtonOthers_Click(object sender, EventArgs e)
+        private void buttonOthers_Click(object sender, EventArgs e)
         {
             buttonRomOption.BackColor = Color.FromArgb(17, 17, 17);
             buttonRender.BackColor = Color.FromArgb(17, 17, 17);
@@ -369,8 +371,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonFilterHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonCheat.BackColor = Color.FromArgb(17, 17, 17);
-            panelRomOption.Visible = false;
-            panelRender.Visible = false;
+            groupRomOption.Visible = false;
+            groupRender.Visible = false;
             panelOthers.Visible = true;
             dataGridViewIdle.Visible = false;
             labelCountIdle.Visible = false;
@@ -387,7 +389,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
-            labelBy.Visible = false;
+            //labelBy.Visible = false;
         }
 
         private void ButtonIdle_Click(object sender, EventArgs e)
@@ -403,8 +405,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonFilterHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonCheat.BackColor = Color.FromArgb(17, 17, 17);
-            panelRomOption.Visible = false;
-            panelRender.Visible = false;
+            groupRomOption.Visible = false;
+            groupRender.Visible = false;
             panelOthers.Visible = false;
             dataGridViewIdle.Visible = true;
             labelCountIdle.Visible = true;
@@ -421,7 +423,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
-            labelBy.Visible = false;
+            //labelBy.Visible = false;
         }
 
         private void ButtonInsertIdleInst_Click(object sender, EventArgs e)
@@ -437,8 +439,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonFilterHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonCheat.BackColor = Color.FromArgb(17, 17, 17);
-            panelRomOption.Visible = false;
-            panelRender.Visible = false;
+            groupRomOption.Visible = false;
+            groupRender.Visible = false;
             panelOthers.Visible = false;
             dataGridViewIdle.Visible = false;
             labelCountIdle.Visible = false;
@@ -455,7 +457,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
-            labelBy.Visible = false;
+            //labelBy.Visible = false;
         }
 
         private void ButtonSpecialInst_Click(object sender, EventArgs e)
@@ -471,8 +473,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonFilterHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonCheat.BackColor = Color.FromArgb(17, 17, 17);
-            panelRomOption.Visible = false;
-            panelRender.Visible = false;
+            groupRomOption.Visible = false;
+            groupRender.Visible = false;
             panelOthers.Visible = false;
             dataGridViewIdle.Visible = false;
             labelCountIdle.Visible = false;
@@ -489,7 +491,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
-            labelBy.Visible = false;
+            //labelBy.Visible = false;
         }
 
         private void ButtonBreakBlockInst_Click(object sender, EventArgs e)
@@ -505,8 +507,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonFilterHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonCheat.BackColor = Color.FromArgb(17, 17, 17);
-            panelRomOption.Visible = false;
-            panelRender.Visible = false;
+            groupRomOption.Visible = false;
+            groupRender.Visible = false;
             panelOthers.Visible = false;
             dataGridViewIdle.Visible = false;
             labelCountIdle.Visible = false;
@@ -523,7 +525,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
-            labelBy.Visible = false;
+            //labelBy.Visible = false;
         }
 
         private void ButtonRomHack_Click(object sender, EventArgs e)
@@ -539,8 +541,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonFilterHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonCheat.BackColor = Color.FromArgb(17, 17, 17);
-            panelRomOption.Visible = false;
-            panelRender.Visible = false;
+            groupRomOption.Visible = false;
+            groupRender.Visible = false;
             panelOthers.Visible = false;
             dataGridViewIdle.Visible = false;
             labelCountIdle.Visible = false;
@@ -557,7 +559,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
-            labelBy.Visible = false;
+            //labelBy.Visible = false;
         }
 
         private void ButtonVertexHack_Click(object sender, EventArgs e)
@@ -573,8 +575,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(16, 110, 190);
             buttonFilterHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonCheat.BackColor = Color.FromArgb(17, 17, 17);
-            panelRomOption.Visible = false;
-            panelRender.Visible = false;
+            groupRomOption.Visible = false;
+            groupRender.Visible = false;
             panelOthers.Visible = false;
             dataGridViewIdle.Visible = false;
             labelCountIdle.Visible = false;
@@ -591,7 +593,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = false;
-            labelBy.Visible = false;
+            //labelBy.Visible = false;
         }
 
         private void ButtonFilterHack_Click(object sender, EventArgs e)
@@ -607,8 +609,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonFilterHack.BackColor = Color.FromArgb(16, 110, 190);
             buttonCheat.BackColor = Color.FromArgb(17, 17, 17);
-            panelRomOption.Visible = false;
-            panelRender.Visible = false;
+            groupRomOption.Visible = false;
+            groupRender.Visible = false;
             panelOthers.Visible = false;
             dataGridViewIdle.Visible = false;
             labelCountIdle.Visible = false;
@@ -625,7 +627,7 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = true;
             labelCountFilterHack.Visible = true;
             dataGridViewCheat.Visible = false;
-            labelBy.Visible = false;
+            //labelBy.Visible = false;
         }
 
         private void ButtonCheat_Click(object sender, EventArgs e)
@@ -641,8 +643,8 @@ namespace VCN64Config
             buttonVertexHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonFilterHack.BackColor = Color.FromArgb(17, 17, 17);
             buttonCheat.BackColor = Color.FromArgb(16, 110, 190);
-            panelRomOption.Visible = false;
-            panelRender.Visible = false;
+            groupRomOption.Visible = false;
+            groupRender.Visible = false;
             panelOthers.Visible = false;
             dataGridViewIdle.Visible = false;
             labelCountIdle.Visible = false;
@@ -659,7 +661,12 @@ namespace VCN64Config
             dataGridViewFilterHack.Visible = false;
             labelCountFilterHack.Visible = false;
             dataGridViewCheat.Visible = true;
-            labelBy.Visible = true;
+            //labelBy.Visible = true;
+        }
+
+        private void linkLabelResearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://gbatemp.net/entry/wiiu-n64-virtual-console-research.15301/");
         }
 
         #endregion
@@ -890,6 +897,27 @@ namespace VCN64Config
             else
                 sw.WriteLine(";AIIntPerFrame = 0");
 
+            if (checkAISetControl.CheckState == CheckState.Checked)
+                sw.WriteLine("AISetControl = 1");
+            else if (checkAISetControl.CheckState == CheckState.Unchecked)
+                sw.WriteLine("AISetControl = 0");
+            else
+                sw.WriteLine(";AISetControl = 0");
+
+            if (checkAISetDAC.CheckState == CheckState.Checked)
+                sw.WriteLine("AISetDAC = 1");
+            else if (checkAISetDAC.CheckState == CheckState.Unchecked)
+                sw.WriteLine("AISetDAC = 0");
+            else
+                sw.WriteLine(";AISetDAC = 0");
+
+            if (checkAISetRateBit.CheckState == CheckState.Checked)
+                sw.WriteLine("AISetRateBit = 1");
+            else if (checkAISetRateBit.CheckState == CheckState.Unchecked)
+                sw.WriteLine("AISetRateBit = 0");
+            else
+                sw.WriteLine(";AISetRateBit = 0");
+
             if (checkAIUseTimer.CheckState == CheckState.Checked)
                 sw.WriteLine("AIUseTimer = 1");
             else if (checkAIUseTimer.CheckState == CheckState.Unchecked)
@@ -935,6 +963,13 @@ namespace VCN64Config
                     break;
             }
 
+            if (checkBootEnd.CheckState == CheckState.Checked)
+                sw.WriteLine("BootEnd = 1");
+            else if (checkBootEnd.CheckState == CheckState.Unchecked)
+                sw.WriteLine("BootEnd = 0");
+            else
+                sw.WriteLine(";BootEnd = 0");
+
             if (checkBootPCChange.CheckState == CheckState.Checked)
                 sw.WriteLine("BootPCChange = 1");
             else if (checkBootPCChange.CheckState == CheckState.Unchecked)
@@ -953,6 +988,13 @@ namespace VCN64Config
                 sw.WriteLine("EEROMInitValue = 0xFF");
             else
                 sw.WriteLine(";EEROMInitValue = 0xFF");
+
+            if (checkg_nN64CpuCmpBlockAdvFlag.CheckState == CheckState.Checked)
+                sw.WriteLine("g_nN64CpuCmpBlockAdvFlag = 1");
+            else if (checkg_nN64CpuCmpBlockAdvFlag.CheckState == CheckState.Unchecked)
+                sw.WriteLine("g_nN64CpuCmpBlockAdvFlag = 0");
+            else
+                sw.WriteLine(";g_nN64CpuCmpBlockAdvFlag = 0");
 
             if (checkMemPak.CheckState == CheckState.Checked)
                 sw.WriteLine("MemPak = 1");
@@ -976,10 +1018,16 @@ namespace VCN64Config
                     sw.WriteLine("PlayerNum = 1");
                     break;
                 case 1:
+                    sw.WriteLine("PlayerNum = 2");
+                    break;
+                case 2:
+                    sw.WriteLine("PlayerNum = 3");
+                    break;
+                case 3:
                     sw.WriteLine("PlayerNum = 4");
                     break;
                 default:
-                    sw.WriteLine(";PlayerNum = ");
+                    sw.WriteLine(";PlayerNum = 4");
                     break;
             }
 
@@ -1002,6 +1050,13 @@ namespace VCN64Config
             else
                 sw.WriteLine(";RomType = 0");
 
+            if (checkRSPAMultiCoreWait.CheckState == CheckState.Checked)
+                sw.WriteLine("RSPAMultiCoreWait = 1");
+            else if (checkRSPAMultiCoreWait.CheckState == CheckState.Unchecked)
+                sw.WriteLine("RSPAMultiCoreWait = 0");
+            else
+                sw.WriteLine(";RSPAMultiCoreWait = 0");
+
             if (checkRSPMultiCore.CheckState == CheckState.Checked)
                 sw.WriteLine("RSPMultiCore = 1");
             else if (checkRSPMultiCore.CheckState == CheckState.Unchecked)
@@ -1009,12 +1064,28 @@ namespace VCN64Config
             else
                 sw.WriteLine(";RSPMultiCore = 0");
 
-            if (checkRSPAMultiCoreWait.CheckState == CheckState.Checked)
-                sw.WriteLine("RSPAMultiCoreWait = 1");
-            else if (checkRSPAMultiCoreWait.CheckState == CheckState.Unchecked)
-                sw.WriteLine("RSPAMultiCoreWait = 0");
+            switch (comboRSPMultiCoreInt.SelectedIndex)
+            {
+                case 0:
+                    sw.WriteLine("RSPMultiCoreInt = 1");
+                    break;
+                case 1:
+                    sw.WriteLine("RSPMultiCoreInt = 2");
+                    break;
+                case 2:
+                    sw.WriteLine("RSPMultiCoreInt = 3");
+                    break;
+                default:
+                    sw.WriteLine(";RSPMultiCoreInt = 0");
+                    break;
+            }
+
+            if (checkRSPMultiCoreWait.CheckState == CheckState.Checked)
+                sw.WriteLine("RSPMultiCoreWait = 1");
+            else if (checkRSPMultiCoreWait.CheckState == CheckState.Unchecked)
+                sw.WriteLine("RSPMultiCoreWait = 0");
             else
-                sw.WriteLine(";RSPAMultiCoreWait = 0");
+                sw.WriteLine(";RSPMultiCoreWait = 0");
 
             if (checkRumble.CheckState == CheckState.Checked)
                 sw.WriteLine("Rumble = 1");
@@ -1071,6 +1142,20 @@ namespace VCN64Config
             else
                 sw.WriteLine(";TimeIntDelay = 0");
 
+            if (checkTLBMissEnable.CheckState == CheckState.Checked)
+                sw.WriteLine("TLBMissEnable = 1");
+            else if (checkTLBMissEnable.CheckState == CheckState.Unchecked)
+                sw.WriteLine("TLBMissEnable = 0");
+            else
+                sw.WriteLine(";TLBMissEnable = 0");
+
+            if (checkTPak.CheckState == CheckState.Checked)
+                sw.WriteLine("TPak = 1");
+            else if (checkTPak.CheckState == CheckState.Unchecked)
+                sw.WriteLine("TPak = 0");
+            else
+                sw.WriteLine(";TPak = 0");
+
             if (checkTrueBoot.CheckState == CheckState.Checked)
                 sw.WriteLine("TrueBoot = 1");
             else if (checkTrueBoot.CheckState == CheckState.Unchecked)
@@ -1092,6 +1177,13 @@ namespace VCN64Config
         {
             sw.WriteLine("[Render]");
 
+            if (checkbCutClip.CheckState == CheckState.Checked)
+                sw.WriteLine("bCutClip = 1");
+            else if (checkbCutClip.CheckState == CheckState.Unchecked)
+                sw.WriteLine("bCutClip = 0");
+            else
+                sw.WriteLine(";bCutClip = 0");
+
             if (checkbForce720P.CheckState == CheckState.Checked)
                 sw.WriteLine("bForce720P = 1");
             else if (checkbForce720P.CheckState == CheckState.Unchecked)
@@ -1106,10 +1198,15 @@ namespace VCN64Config
             else
                 sw.WriteLine(";CalculateLOD = 0");
 
-            if (checkCanvasWidth.Checked)
-                sw.WriteLine("CanvasWidth = 600");
+            if (numericCanvasWidth.Value == 0.0M)
+                sw.WriteLine(";CanvasWidth = 854");
             else
-                sw.WriteLine(";CanvasWidth = 600");
+                sw.WriteLine("CanvasWidth = " + Convert.ToInt32(numericCanvasWidth.Value).ToString());
+
+            if (numericCanvasHeight.Value == 0.0M)
+                sw.WriteLine(";CanvasHeight = 480");
+            else
+                sw.WriteLine("CanvasHeight = " + Convert.ToInt32(numericCanvasHeight.Value).ToString());
 
             if (checkCheckTlutValid.CheckState == CheckState.Checked)
                 sw.WriteLine("CheckTlutValid = 1");
@@ -1157,19 +1254,19 @@ namespace VCN64Config
             else
                 sw.WriteLine(";CopyAlphaForceOne = 0");
 
-            if (checkCopyColorBuffer.CheckState == CheckState.Checked)
-                sw.WriteLine("CopyColorBuffer = 1");
-            else if (checkCopyColorBuffer.CheckState == CheckState.Unchecked)
-                sw.WriteLine("CopyColorBuffer = 0");
-            else
-                sw.WriteLine(";CopyColorBuffer = 0");
-
             if (checkCopyColorAfterTask.CheckState == CheckState.Checked)
                 sw.WriteLine("CopyColorAfterTask = 1");
             else if (checkCopyColorAfterTask.CheckState == CheckState.Unchecked)
                 sw.WriteLine("CopyColorAfterTask = 0");
             else
                 sw.WriteLine(";CopyColorAfterTask = 0");
+
+            if (checkCopyColorBuffer.CheckState == CheckState.Checked)
+                sw.WriteLine("CopyColorBuffer = 1");
+            else if (checkCopyColorBuffer.CheckState == CheckState.Unchecked)
+                sw.WriteLine("CopyColorBuffer = 0");
+            else
+                sw.WriteLine(";CopyColorBuffer = 0");
 
             if (checkCopyDepthBuffer.CheckState == CheckState.Checked)
                 sw.WriteLine("CopyDepthBuffer = 1");
@@ -1185,12 +1282,26 @@ namespace VCN64Config
             else
                 sw.WriteLine(";CopyMiddleBuffer = 0");
 
+            if (checkDepthCompare.CheckState == CheckState.Checked)
+                sw.WriteLine("DepthCompare = 1");
+            else if (checkDepthCompare.CheckState == CheckState.Unchecked)
+                sw.WriteLine("DepthCompare = 0");
+            else
+                sw.WriteLine(";DepthCompare = 0");
+
             if (checkDepthCompareLess.CheckState == CheckState.Checked)
                 sw.WriteLine("DepthCompareLess = 1");
             else if (checkDepthCompareLess.CheckState == CheckState.Unchecked)
                 sw.WriteLine("DepthCompareLess = 0");
             else
                 sw.WriteLine(";DepthCompareLess = 0");
+
+            if (checkDepthCompareMore.CheckState == CheckState.Checked)
+                sw.WriteLine("DepthCompareMore = 1");
+            else if (checkDepthCompareMore.CheckState == CheckState.Unchecked)
+                sw.WriteLine("DepthCompareMore = 0");
+            else
+                sw.WriteLine(";DepthCompareMore = 0");
 
             if (checkDoubleFillCheck.CheckState == CheckState.Checked)
                 sw.WriteLine("DoubleFillCheck = 1");
@@ -1232,6 +1343,13 @@ namespace VCN64Config
             else
                 sw.WriteLine(";ForceRectFilterPoint = 0");
 
+            if (checkFrameClearCacheInit.CheckState == CheckState.Checked)
+                sw.WriteLine("FrameClearCacheInit = 1");
+            else if (checkFrameClearCacheInit.CheckState == CheckState.Unchecked)
+                sw.WriteLine("FrameClearCacheInit = 0");
+            else
+                sw.WriteLine(";FrameClearCacheInit = 0");
+
             if (checkInitPerspectiveMode.CheckState == CheckState.Checked)
                 sw.WriteLine("InitPerspectiveMode = 1");
             else if (checkInitPerspectiveMode.CheckState == CheckState.Unchecked)
@@ -1267,6 +1385,20 @@ namespace VCN64Config
             else
                 sw.WriteLine(";PreparseTMEMBlock = 0");
 
+            if (checkRendererReset.CheckState == CheckState.Checked)
+                sw.WriteLine("RendererReset = 1");
+            else if (checkRendererReset.CheckState == CheckState.Unchecked)
+                sw.WriteLine("RendererReset = 0");
+            else
+                sw.WriteLine(";RendererReset = 0");
+
+            if (checkTexEdgeAlpha.CheckState == CheckState.Checked)
+                sw.WriteLine("TexEdgeAlpha = 1");
+            else if (checkTexEdgeAlpha.CheckState == CheckState.Unchecked)
+                sw.WriteLine("TexEdgeAlpha = 0");
+            else
+                sw.WriteLine(";TexEdgeAlpha = 0");
+
             if (checkTileSizeCheckSpecial.CheckState == CheckState.Checked)
                 sw.WriteLine("TileSizeCheckSpecial = 1");
             else if (checkTileSizeCheckSpecial.CheckState == CheckState.Unchecked)
@@ -1288,12 +1420,40 @@ namespace VCN64Config
             else
                 sw.WriteLine(";UseColorDither = 0");
 
+            if (checkuseViewportXScale.CheckState == CheckState.Checked)
+                sw.WriteLine("useViewportXScale = 1");
+            else if (checkuseViewportXScale.CheckState == CheckState.Unchecked)
+                sw.WriteLine("useViewportXScale = 0");
+            else
+                sw.WriteLine(";useViewportXScale = 0");
+
+            if (checkuseViewportYScale.CheckState == CheckState.Checked)
+                sw.WriteLine("useViewportYScale = 1");
+            else if (checkuseViewportYScale.CheckState == CheckState.Unchecked)
+                sw.WriteLine("useViewportYScale = 0");
+            else
+                sw.WriteLine(";useViewportYScale = 0");
+
             if (checkuseViewportZScale.CheckState == CheckState.Checked)
                 sw.WriteLine("useViewportZScale = 1");
             else if (checkuseViewportZScale.CheckState == CheckState.Unchecked)
                 sw.WriteLine("useViewportZScale = 0");
             else
                 sw.WriteLine(";useViewportZScale = 0");
+
+            if (checkXClip.CheckState == CheckState.Checked)
+                sw.WriteLine("XClip = 1");
+            else if (checkXClip.CheckState == CheckState.Unchecked)
+                sw.WriteLine("XClip = 0");
+            else
+                sw.WriteLine(";XClip = 0");
+
+            if (checkYClip.CheckState == CheckState.Checked)
+                sw.WriteLine("YClip = 1");
+            else if (checkYClip.CheckState == CheckState.Unchecked)
+                sw.WriteLine("YClip = 0");
+            else
+                sw.WriteLine(";YClip = 0");
 
             if (checkZClip.CheckState == CheckState.Checked)
                 sw.WriteLine("ZClip = 1");
@@ -1321,7 +1481,7 @@ namespace VCN64Config
                     sw.WriteLine("BufFull = 0x3800");
                     break;
                 default:
-                    sw.WriteLine(";BufFull = 0x");
+                    sw.WriteLine(";BufFull = 0x0");
                     break;
             }
 
@@ -1340,7 +1500,7 @@ namespace VCN64Config
                     sw.WriteLine("BufHalf = 0x2800");
                     break;
                 default:
-                    sw.WriteLine(";BufHalf = 0x");
+                    sw.WriteLine(";BufHalf = 0x0");
                     break;
             }
 
@@ -1353,7 +1513,7 @@ namespace VCN64Config
                     sw.WriteLine("BufHave = 0x1400");
                     break;
                 default:
-                    sw.WriteLine(";BufHave = 0x");
+                    sw.WriteLine(";BufHave = 0x0");
                     break;
             }
 
@@ -1366,7 +1526,7 @@ namespace VCN64Config
                     sw.WriteLine("FillAfterVCM = 8");
                     break;
                 default:
-                    sw.WriteLine(";FillAfterVCM = ");
+                    sw.WriteLine(";FillAfterVCM = 0");
                     break;
             }
 
@@ -1382,7 +1542,7 @@ namespace VCN64Config
                     sw.WriteLine("Resample = 32500");
                     break;
                 default:
-                    sw.WriteLine(";Resample = ");
+                    sw.WriteLine(";Resample = 0");
                     break;
             }
 
@@ -1413,7 +1573,7 @@ namespace VCN64Config
                     sw.WriteLine("StickLimit = 90");
                     break;
                 default:
-                    sw.WriteLine(";StickLimit = ");
+                    sw.WriteLine(";StickLimit = 100");
                     break;
             }
 
@@ -1429,7 +1589,7 @@ namespace VCN64Config
                     sw.WriteLine("StickModify = 3");
                     break;
                 default:
-                    sw.WriteLine(";StickModify = ");
+                    sw.WriteLine(";StickModify = 0");
                     break;
             }
 
@@ -1462,7 +1622,7 @@ namespace VCN64Config
                     sw.WriteLine("GTaskDelay = 1481250");
                     break;
                 default:
-                    sw.WriteLine(";GTaskDelay = ");
+                    sw.WriteLine(";GTaskDelay = 0");
                     break;
             }
 
@@ -1475,7 +1635,7 @@ namespace VCN64Config
                     sw.WriteLine("RDPDelay = 481250");
                     break;
                 default:
-                    sw.WriteLine(";RDPDelay = ");
+                    sw.WriteLine(";RDPDelay = 0");
                     break;
             }
 
@@ -1492,6 +1652,13 @@ namespace VCN64Config
                 sw.WriteLine("RIntAfterGTask = 0");
             else
                 sw.WriteLine(";RIntAfterGTask = 0");
+
+            if (checkRSPGWaitOnlyFirstGTaskDelay.CheckState == CheckState.Checked)
+                sw.WriteLine("RSPGWaitOnlyFirstGTaskDelay = 1");
+            else if (checkRSPGWaitOnlyFirstGTaskDelay.CheckState == CheckState.Unchecked)
+                sw.WriteLine("RSPGWaitOnlyFirstGTaskDelay = 0");
+            else
+                sw.WriteLine(";RSPGWaitOnlyFirstGTaskDelay = 0");
 
             if (checkSkip.CheckState == CheckState.Checked)
                 sw.WriteLine("Skip = 1");
@@ -1527,9 +1694,16 @@ namespace VCN64Config
                     sw.WriteLine("BlockSize = 0x3000");
                     break;
                 default:
-                    sw.WriteLine(";BlockSize = ");
+                    sw.WriteLine(";BlockSize = 0x0");
                     break;
             }
+
+            if (checkCmpLimit.CheckState == CheckState.Checked)
+                sw.WriteLine("CmpLimit = 1");
+            else if (checkCmpLimit.CheckState == CheckState.Unchecked)
+                sw.WriteLine("CmpLimit = 0");
+            else
+                sw.WriteLine(";CmpLimit = 0");
 
             if (checkFrameBlockLimit.Checked)
                 sw.WriteLine("FrameBlockLimit = 0x100");
@@ -1552,6 +1726,45 @@ namespace VCN64Config
 
             sw.WriteLine();
 
+            sw.WriteLine("[TempConfig]");
+
+            if (checkg_nN64CpuPC.CheckState == CheckState.Checked)
+                sw.WriteLine("g_nN64CpuPC = 1");
+            else if (checkg_nN64CpuPC.CheckState == CheckState.Unchecked)
+                sw.WriteLine("g_nN64CpuPC = 0");
+            else
+                sw.WriteLine(";g_nN64CpuPC = 0");
+
+            if (checkn64MemAcquireForground.CheckState == CheckState.Checked)
+                sw.WriteLine("n64MemAcquireForground = 1");
+            else if (checkn64MemAcquireForground.CheckState == CheckState.Unchecked)
+                sw.WriteLine("n64MemAcquireForground = 0");
+            else
+                sw.WriteLine(";n64MemAcquireForground = 0");
+
+            if (checkn64MemDefaultRead32MemTest.CheckState == CheckState.Checked)
+                sw.WriteLine("n64MemDefaultRead32MemTest = 1");
+            else if (checkn64MemDefaultRead32MemTest.CheckState == CheckState.Unchecked)
+                sw.WriteLine("n64MemDefaultRead32MemTest = 0");
+            else
+                sw.WriteLine(";n64MemDefaultRead32MemTest = 0");
+
+            if (checkn64MemReleaseForground.CheckState == CheckState.Checked)
+                sw.WriteLine("n64MemReleaseForground = 1");
+            else if (checkRSPGDCFlush.CheckState == CheckState.Unchecked)
+                sw.WriteLine("n64MemReleaseForground = 0");
+            else
+                sw.WriteLine(";n64MemReleaseForground = 0");
+
+            if (checkRSPGDCFlush.CheckState == CheckState.Checked)
+                sw.WriteLine("RSPGDCFlush = 1");
+            else if (checkRSPGDCFlush.CheckState == CheckState.Unchecked)
+                sw.WriteLine("RSPGDCFlush = 0");
+            else
+                sw.WriteLine(";RSPGDCFlush = 0");
+
+            sw.WriteLine();
+
             sw.WriteLine("[SI]");
 
             switch (comboSIDelay.SelectedIndex)
@@ -1563,7 +1776,7 @@ namespace VCN64Config
                     sw.WriteLine("SIDelay = 0x10800");
                     break;
                 default:
-                    sw.WriteLine(";SIDelay = ");
+                    sw.WriteLine(";SIDelay = 0x0");
                     break;
             }
 
@@ -1577,17 +1790,6 @@ namespace VCN64Config
                 sw.WriteLine("ScanReadTime = 0");
             else
                 sw.WriteLine(";ScanReadTime = 0");
-
-            sw.WriteLine();
-
-            sw.WriteLine("[TempConfig]");
-
-            if (checkRSPGDCFlush.CheckState == CheckState.Checked)
-                sw.WriteLine("RSPGDCFlush = 1");
-            else if (checkRSPGDCFlush.CheckState == CheckState.Unchecked)
-                sw.WriteLine("RSPGDCFlush = 0");
-            else
-                sw.WriteLine(";RSPGDCFlush = 0");
 
             sw.WriteLine();
 
@@ -1733,6 +1935,9 @@ namespace VCN64Config
         private void LoadRomOption()
         {
             checkAIIntPerFrame.CheckState = Config.RomOption.AIIntPerFrame;
+            checkAISetControl.CheckState = Config.RomOption.AISetControl;
+            checkAISetDAC.CheckState = Config.RomOption.AISetDAC;
+            checkAISetRateBit.CheckState = Config.RomOption.AISetRateBit;
             checkAIUseTimer.CheckState = Config.RomOption.AIUseTimer;
 
             switch (Config.RomOption.BackupSize)
@@ -1773,6 +1978,7 @@ namespace VCN64Config
                     break;
             }
 
+            checkBootEnd.CheckState = Config.RomOption.BootEnd;
             checkBootPCChange.CheckState = Config.RomOption.BootPCChange;
             checkCmpBlockAdvFlag.CheckState = Config.RomOption.CmpBlockAdvFlag;
 
@@ -1787,11 +1993,17 @@ namespace VCN64Config
 
             switch (Config.RomOption.PlayerNum)
             {
-                case 0:
+                case 1:
                     comboPlayerNum.SelectedIndex = 0;
                     break;
-                case 1:
+                case 2:
                     comboPlayerNum.SelectedIndex = 1;
+                    break;
+                case 3:
+                    comboPlayerNum.SelectedIndex = 2;
+                    break;
+                case 4:
+                    comboPlayerNum.SelectedIndex = 3;
                     break;
                 default:
                     comboPlayerNum.SelectedIndex = comboPlayerNum.Items.Count - 1;
@@ -1805,8 +2017,26 @@ namespace VCN64Config
 
             checkRetraceByVsync.CheckState = Config.RomOption.RetraceByVsync;
             checkRomType.CheckState = Config.RomOption.RomType;
-            checkRSPMultiCore.CheckState = Config.RomOption.RSPMultiCore;
             checkRSPAMultiCoreWait.CheckState = Config.RomOption.RSPAMultiCoreWait;
+            checkRSPMultiCore.CheckState = Config.RomOption.RSPMultiCore;
+
+            switch (Config.RomOption.RSPMultiCoreInt)
+            {
+                case 1:
+                    comboRSPMultiCoreInt.SelectedIndex = 0;
+                    break;
+                case 2:
+                    comboRSPMultiCoreInt.SelectedIndex = 1;
+                    break;
+                case 3:
+                    comboRSPMultiCoreInt.SelectedIndex = 2;
+                    break;
+                default:
+                    comboRSPMultiCoreInt.SelectedIndex = comboRSPMultiCoreInt.Items.Count - 1;
+                    break;
+            }
+
+            checkRSPMultiCoreWait.CheckState = Config.RomOption.RSPMultiCoreWait;
             checkRumble.CheckState = Config.RomOption.Rumble;
             checkScreenCaptureNG.CheckState = Config.RomOption.ScreenCaptureNG;
 
@@ -1845,39 +2075,47 @@ namespace VCN64Config
             }
 
             checkTimeIntDelay.CheckState = Config.RomOption.TimeIntDelay;
+            checkTLBMissEnable.CheckState = Config.RomOption.TLBMissEnable;
+            checkTPak.CheckState = Config.RomOption.TPak;
             checkTrueBoot.CheckState = Config.RomOption.TrueBoot;
             checkUseTimer.CheckState = Config.RomOption.UseTimer;
         }
 
         private void LoadRender()
         {
+            checkbCutClip.CheckState = Config.Render.bCutClip;
             checkbForce720P.CheckState = Config.Render.bForce720P;
             checkCalculateLOD.CheckState = Config.Render.CalculateLOD;
 
-            if (Config.Render.CanvasWidth == 600)
-                checkCanvasWidth.Checked = true;
+            if (Config.Render.CanvasWidth >= 0 && Config.Render.CanvasWidth <= 854)
+                numericCanvasWidth.Value = Config.Render.CanvasWidth;
             else
-                checkCanvasWidth.Checked = false;
+                numericCanvasWidth.Value = 0;
+
+            if (Config.Render.CanvasHeight >= 0 && Config.Render.CanvasHeight <= 576)
+                numericCanvasHeight.Value = Config.Render.CanvasHeight;
+            else
+                numericCanvasHeight.Value = 0;
 
             checkCheckTlutValid.CheckState = Config.Render.CheckTlutValid;
             checkClearVertexBuf.CheckState = Config.Render.ClearVertexBuf;
 
-            if (Config.Render.ClipBottom >= 0 && Config.Render.ClipBottom <= 12)
+            if (Config.Render.ClipBottom >= -25 && Config.Render.ClipBottom <= 25)
                 numericClipBottom.Value = Config.Render.ClipBottom;
             else
                 numericClipBottom.Value = 0;
 
-            if (Config.Render.ClipLeft >= 0 && Config.Render.ClipLeft <= 12)
+            if (Config.Render.ClipLeft >= -25 && Config.Render.ClipLeft <= 25)
                 numericClipLeft.Value = Config.Render.ClipLeft;
             else
                 numericClipLeft.Value = 0;
 
-            if (Config.Render.ClipRight >= 0 && Config.Render.ClipRight <= 12)
+            if (Config.Render.ClipRight >= -25 && Config.Render.ClipRight <= 25)
                 numericClipRight.Value = Config.Render.ClipRight;
             else
                 numericClipRight.Value = 0;
 
-            if (Config.Render.ClipTop >= 0 && Config.Render.ClipTop <= 12)
+            if (Config.Render.ClipTop >= -25 && Config.Render.ClipTop <= 25)
                 numericClipTop.Value = Config.Render.ClipTop;
             else
                 numericClipTop.Value = 0;
@@ -1887,11 +2125,13 @@ namespace VCN64Config
                 dataGridViewConstValue.Rows.Add(constValue);
 
             checkCopyAlphaForceOne.CheckState = Config.Render.CopyAlphaForceOne;
-            checkCopyColorBuffer.CheckState = Config.Render.CopyColorBuffer;
             checkCopyColorAfterTask.CheckState = Config.Render.CopyColorAfterTask;
+            checkCopyColorBuffer.CheckState = Config.Render.CopyColorBuffer;
             checkCopyDepthBuffer.CheckState = Config.Render.CopyDepthBuffer;
             checkCopyMiddleBuffer.CheckState = Config.Render.CopyMiddleBuffer;
+            checkDepthCompare.CheckState = Config.Render.DepthCompare;
             checkDepthCompareLess.CheckState = Config.Render.DepthCompareLess;
+            checkDepthCompareMore.CheckState = Config.Render.DepthCompareMore;
             checkDoubleFillCheck.CheckState = Config.Render.DoubleFillCheck;
 
             if (Config.Render.FirstFrameAt == 1000)
@@ -1902,15 +2142,22 @@ namespace VCN64Config
             checkFlushMemEachTask.CheckState = Config.Render.FlushMemEachTask;
             checkFogVertexAlpha.CheckState = Config.Render.FogVertexAlpha;
             checkForceFilterPoint.CheckState = Config.Render.ForceFilterPoint;
+            checkFrameClearCacheInit.CheckState = Config.Render.FrameClearCacheInit;
             checkInitPerspectiveMode.CheckState = Config.Render.InitPerspectiveMode;
             checkNeedPreParse.CheckState = Config.Render.NeedPreParse;
             checkNeedTileSizeCheck.CheckState = Config.Render.NeedTileSizeCheck;
             checkPolygonOffset.CheckState = Config.Render.PolygonOffset;
             checkPreparseTMEMBlock.CheckState = Config.Render.PreparseTMEMBlock;
+            checkRendererReset.CheckState = Config.Render.RendererReset;
+            checkTexEdgeAlpha.CheckState = Config.Render.TexEdgeAlpha;
             checkTileSizeCheckSpecial.CheckState = Config.Render.TileSizeCheckSpecial;
             checkTLUTCheck.CheckState = Config.Render.TLUTCheck;
             checkUseColorDither.CheckState = Config.Render.UseColorDither;
+            checkuseViewportXScale.CheckState = Config.Render.useViewportXScale;
+            checkuseViewportYScale.CheckState = Config.Render.useViewportYScale;
             checkuseViewportZScale.CheckState = Config.Render.useViewportZScale;
+            checkXClip.CheckState = Config.Render.XClip;
+            checkYClip.CheckState = Config.Render.YClip;
             checkZClip.CheckState = Config.Render.ZClip;
         }
 
@@ -2064,6 +2311,7 @@ namespace VCN64Config
 
             checkRDPInt.CheckState = Config.RSPG.RDPInt;
             checkRIntAfterGTask.CheckState = Config.RSPG.RIntAfterGTask;
+            checkRSPGWaitOnlyFirstGTaskDelay.CheckState = Config.RSPG.RSPGWaitOnlyFirstGTaskDelay;
             checkSkip.CheckState = Config.RSPG.Skip;
             checkWaitDelay.CheckState = Config.RSPG.WaitDelay;
             checkWaitOnlyFirst.CheckState = Config.RSPG.WaitOnlyFirst;
@@ -2081,6 +2329,8 @@ namespace VCN64Config
                     break;
             }
 
+            checkCmpLimit.CheckState = Config.Cmp.CmpLimit;
+
             if (Config.Cmp.FrameBlockLimit == 0x100)
                 checkFrameBlockLimit.Checked = true;
             else
@@ -2088,6 +2338,12 @@ namespace VCN64Config
 
             checkOptEnable.CheckState = Config.Cmp.OptEnable;
             checkW32OverlayCheck.CheckState = Config.Cmp.W32OverlayCheck;
+
+            checkg_nN64CpuPC.CheckState = Config.TempConfig.g_nN64CpuPC;
+            checkn64MemAcquireForground.CheckState = Config.TempConfig.n64MemAcquireForground;
+            checkn64MemDefaultRead32MemTest.CheckState = Config.TempConfig.n64MemDefaultRead32MemTest;
+            checkn64MemReleaseForground.CheckState = Config.TempConfig.n64MemReleaseForground;
+            checkRSPGDCFlush.CheckState = Config.TempConfig.RSPGDCFlush;
 
             switch (Config.Others.SIDelay)
             {
@@ -2103,7 +2359,6 @@ namespace VCN64Config
             }
 
             checkScanReadTime.CheckState = Config.Others.ScanReadTime;
-            checkRSPGDCFlush.CheckState = Config.Others.RSPGDCFlush;
 
             dataGridViewFrameTickHack.Rows.Clear();
             foreach (object hack in Config.Others.FrameTickHack)

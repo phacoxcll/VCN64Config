@@ -117,9 +117,107 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>394, 17</value>
+  </metadata>
+  <data name="comboBackupSize.ToolTip" xml:space="preserve">
+    <value>[null] = Comment
+Size of the save file used by the ROM. Either memory in cartridge or Controller Pak memory.
+SRAM on Cart and SRAM Controller Pak is usually 32768 bytes.
+EEPROM is usually 512 bytes or 2048 bytes.
+Flash is usually 131072 bytes.
+</value>
+  </data>
+  <data name="checkNeedPreParse.ToolTip" xml:space="preserve">
+    <value>▣ = Comment, ▢ = Disabled, ☑ = Enabled
+PreParse basically grabs Graphical info via 
+Temporary Lists via RAM and loads the data 
+before loading the Game from Textures to 
+Geometry data etc. Kind of like a Cache stacks 
+files up instead loading on the fly.
+This can sometimes fix games that crash some may require it.
+</value>
+  </data>
+  <data name="checkPreparseTMEMBlock.ToolTip" xml:space="preserve">
+    <value>▣ = Comment, ▢ = Disabled, ☑ = Enabled
+PreParse basically grabs Graphical info via 
+Temporary Lists via RAM and loads the data 
+before loading the Game from Textures to 
+Geometry data etc. Kind of like a Cache stacks 
+files up instead loading on the fly.</value>
+  </data>
+  <data name="comboStickLimit.ToolTip" xml:space="preserve">
+    <value>[null] = Comment
+80 for F-Zero X (USA/JPN), Harvest Moon 64 (USA/JPN), Bomberman 64 (USA) and Baku Bomberman (JPN)
+90 for Pokémon Snap (All), Mario Kart 64 (USA/JPN), Yoshi's Story (USA/JPN), Custom Robo (JPN) and Custom Robo V2 (JPN)</value>
+  </data>
+  <data name="comboGTaskDelay.ToolTip" xml:space="preserve">
+    <value>[null] = Comment
+0 for Blast Corps (JPN)
+1024 for Kirby 64 (USA/JPN)
+450000 for Ogre Battle 64 (JPN)
+761250 for Yoshi's Story (USA/JPN)
+1481250 in Blast Corps (JPN) config file
+Graphics GPU Task Delay Time ms.</value>
+  </data>
+  <data name="labelBackupSize.ToolTip" xml:space="preserve">
+    <value>[null] = Comment
+Size of the save file used by the ROM. Either memory in cartridge or Controller Pak memory.
+SRAM on Cart and SRAM Controller Pak is usually 32768 bytes.
+EEPROM is usually 512 bytes or 2048 bytes.
+Flash is usually 131072 bytes.
+</value>
+  </data>
+  <data name="labelStickLimit.ToolTip" xml:space="preserve">
+    <value>[null] = Comment
+80 for F-Zero X (USA/JPN), Harvest Moon 64 (USA/JPN), Bomberman 64 (USA) and Baku Bomberman (JPN)
+90 for Pokémon Snap (All), Mario Kart 64 (USA/JPN), Yoshi's Story (USA/JPN), Custom Robo (JPN) and Custom Robo V2 (JPN)
+</value>
+  </data>
+  <data name="labelGTaskDelay.ToolTip" xml:space="preserve">
+    <value>[null] = Comment
+0 for Blast Corps (JPN)
+1024 for Kirby 64 (USA/JPN)
+450000 for Ogre Battle 64 (JPN)
+761250 for Yoshi's Story (USA/JPN)
+1481250 in Blast Corps (JPN) config file
+Graphics GPU Task Delay Time ms.
+</value>
+  </data>
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="numericCanvasHeight.ToolTip" xml:space="preserve">
+    <value>0 = Comment, 1 to 576
+Internal Rendering Vertical Resolution of ROM.
+Native N64 resolutions 320x240, 384x288, 640x480, 720x576.
+Wii U GamePad resolution 854x480.
+With Yoshi's Story (USA/JPN) use 0.
+</value>
+  </data>
+  <data name="numericCanvasWidth.ToolTip" xml:space="preserve">
+    <value>0 = Comment, 1 to 854
+Internal Rendering Horizontal Resolution of ROM.
+Native N64 resolutions 320x240, 384x288, 640x480, 720x576.
+Wii U GamePad resolution 854x480.
+With Yoshi's Story (USA/JPN) use 600.</value>
+  </data>
+  <data name="labelCanvasHeight.ToolTip" xml:space="preserve">
+    <value>0 = Comment, 1 to 576
+Internal Rendering Vertical Resolution of ROM.
+Native N64 resolutions 320x240, 384x288, 640x480, 720x576.
+Wii U GamePad resolution 854x480.
+With Yoshi's Story (USA/JPN) use 0.
+</value>
+  </data>
+  <data name="labelCanvasWidth.ToolTip" xml:space="preserve">
+    <value>0 = Comment, 1 to 854
+Internal Rendering Horizontal Resolution of ROM.
+Native N64 resolutions 320x240, 384x288, 640x480, 720x576.
+Wii U GamePad resolution 854x480.
+With Yoshi's Story (USA/JPN) use 600.
+</value>
+  </data>
   <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
@@ -128,6 +226,9 @@
   </metadata>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>61</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

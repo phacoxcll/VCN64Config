@@ -62,14 +62,14 @@ namespace VCN64Config
                             case "Cmp":
                                 SectionCmp();
                                 break;
+                            case "TempConfig":
+                                SectionTempConfig();
+                                break;
                             case "SI":
                                 SectionSI();
                                 break;
                             case "VI":
                                 SectionVI();
-                                break;
-                            case "TempConfig":
-                                SectionTempConfig();
                                 break;
                             case "FrameTickHack":
                                 SectionFrameTickHack();
@@ -158,6 +158,15 @@ namespace VCN64Config
                     case "AIIntPerFrame":
                         Config.RomOption.AIIntPerFrame = GetZeroOrOne(property);
                         break;
+                    case "AISetControl":
+                        Config.RomOption.AISetControl = GetZeroOrOne(property);
+                        break;
+                    case "AISetDAC":
+                        Config.RomOption.AISetDAC = GetZeroOrOne(property);
+                        break;
+                    case "AISetRateBit":
+                        Config.RomOption.AISetRateBit = GetZeroOrOne(property);
+                        break;
                     case "AIUseTimer":
                         Config.RomOption.AIUseTimer = GetZeroOrOne(property);
                         break;
@@ -167,6 +176,9 @@ namespace VCN64Config
                     case "BackupType":
                         Config.RomOption.BackupType = GetInt(property);
                         break;
+                    case "BootEnd":
+                        Config.RomOption.BootEnd = GetZeroOrOne(property);
+                        break;
                     case "BootPCChange":
                         Config.RomOption.BootPCChange = GetZeroOrOne(property);
                         break;
@@ -175,6 +187,9 @@ namespace VCN64Config
                         break;
                     case "EEROMInitValue":
                         Config.RomOption.EEROMInitValue = GetHex(property);
+                        break;
+                    case "g_nN64CpuCmpBlockAdvFlag":
+                        Config.RomOption.g_nN64CpuCmpBlockAdvFlag = GetZeroOrOne(property);
                         break;
                     case "MemPak":
                         Config.RomOption.MemPak = GetZeroOrOne(property);
@@ -197,11 +212,17 @@ namespace VCN64Config
                     case "RomType":
                         Config.RomOption.RomType = GetZeroOrOne(property);
                         break;
+                    case "RSPAMultiCoreWait":
+                        Config.RomOption.RSPAMultiCoreWait = GetZeroOrOne(property);
+                        break;
                     case "RSPMultiCore":
                         Config.RomOption.RSPMultiCore = GetZeroOrOne(property);
                         break;
-                    case "RSPAMultiCoreWait":
-                        Config.RomOption.RSPAMultiCoreWait = GetZeroOrOne(property);
+                    case "RSPMultiCoreInt":
+                        Config.RomOption.RSPMultiCoreInt = GetInt(property);
+                        break;
+                    case "RSPMultiCoreWait":
+                        Config.RomOption.RSPMultiCoreWait = GetZeroOrOne(property);
                         break;
                     case "Rumble":
                         Config.RomOption.Rumble = GetZeroOrOne(property);
@@ -214,6 +235,12 @@ namespace VCN64Config
                         break;
                     case "TimeIntDelay":
                         Config.RomOption.TimeIntDelay = GetZeroOrOne(property);
+                        break;
+                    case "TLBMissEnable":
+                        Config.RomOption.TLBMissEnable = GetZeroOrOne(property);
+                        break;
+                    case "TPak":
+                        Config.RomOption.TPak = GetZeroOrOne(property);
                         break;
                     case "TrueBoot":
                         Config.RomOption.TrueBoot = GetZeroOrOne(property);
@@ -241,6 +268,9 @@ namespace VCN64Config
                     Match(KeyLabel.Assignment);
                     switch (property)
                     {
+                        case "bCutClip":
+                            Config.Render.bCutClip = GetZeroOrOne(property);
+                            break;
                         case "bForce720P":
                             Config.Render.bForce720P = GetZeroOrOne(property);
                             break;
@@ -249,6 +279,9 @@ namespace VCN64Config
                             break;
                         case "CanvasWidth":
                             Config.Render.CanvasWidth = GetInt(property);
+                            break;
+                        case "CanvasHeight":
+                            Config.Render.CanvasHeight = GetInt(property);
                             break;
                         case "CheckTlutValid":
                             Config.Render.CheckTlutValid = GetZeroOrOne(property);
@@ -271,11 +304,11 @@ namespace VCN64Config
                         case "CopyAlphaForceOne":
                             Config.Render.CopyAlphaForceOne = GetZeroOrOne(property);
                             break;
-                        case "CopyColorBuffer":
-                            Config.Render.CopyColorBuffer = GetZeroOrOne(property);
-                            break;
                         case "CopyColorAfterTask":
                             Config.Render.CopyColorAfterTask = GetZeroOrOne(property);
+                            break;
+                        case "CopyColorBuffer":
+                            Config.Render.CopyColorBuffer = GetZeroOrOne(property);
                             break;
                         case "CopyDepthBuffer":
                             Config.Render.CopyDepthBuffer = GetZeroOrOne(property);
@@ -283,8 +316,14 @@ namespace VCN64Config
                         case "CopyMiddleBuffer":
                             Config.Render.CopyMiddleBuffer = GetZeroOrOne(property);
                             break;
+                        case "DepthCompare":
+                            Config.Render.DepthCompare = GetZeroOrOne(property);
+                            break;
                         case "DepthCompareLess":
                             Config.Render.DepthCompareLess = GetZeroOrOne(property);
+                            break;
+                        case "DepthCompareMore":
+                            Config.Render.DepthCompareMore = GetZeroOrOne(property);
                             break;
                         case "DoubleFillCheck":
                             Config.Render.DoubleFillCheck = GetZeroOrOne(property);
@@ -304,6 +343,9 @@ namespace VCN64Config
                         case "ForceRectFilterPoint":
                             Config.Render.ForceRectFilterPoint = GetZeroOrOne(property);
                             break;
+                        case "FrameClearCacheInit":
+                            Config.Render.ForceRectFilterPoint = GetZeroOrOne(property);
+                            break;
                         case "InitPerspectiveMode":
                             Config.Render.InitPerspectiveMode = GetZeroOrOne(property);
                             break;
@@ -319,6 +361,12 @@ namespace VCN64Config
                         case "PreparseTMEMBlock":
                             Config.Render.PreparseTMEMBlock = GetZeroOrOne(property);
                             break;
+                        case "RendererReset":
+                            Config.Render.RendererReset = GetZeroOrOne(property);
+                            break;
+                        case "TexEdgeAlpha":
+                            Config.Render.TexEdgeAlpha = GetZeroOrOne(property);
+                            break;
                         case "TileSizeCheckSpecial":
                             Config.Render.TileSizeCheckSpecial = GetZeroOrOne(property);
                             break;
@@ -328,8 +376,20 @@ namespace VCN64Config
                         case "UseColorDither":
                             Config.Render.UseColorDither = GetZeroOrOne(property);
                             break;
+                        case "useViewportXScale":
+                            Config.Render.useViewportXScale = GetZeroOrOne(property);
+                            break;
+                        case "useViewportYScale":
+                            Config.Render.useViewportYScale = GetZeroOrOne(property);
+                            break;
                         case "useViewportZScale":
                             Config.Render.useViewportZScale = GetZeroOrOne(property);
+                            break;
+                        case "XClip":
+                            Config.Render.XClip = GetZeroOrOne(property);
+                            break;
+                        case "YClip":
+                            Config.Render.YClip = GetZeroOrOne(property);
                             break;
                         case "ZClip":
                             Config.Render.ZClip = GetZeroOrOne(property);
@@ -425,6 +485,9 @@ namespace VCN64Config
                     case "RIntAfterGTask":
                         Config.RSPG.RIntAfterGTask = GetZeroOrOne(property);
                         break;
+                    case "RSPGWaitOnlyFirstGTaskDelay":
+                        Config.RSPG.RSPGWaitOnlyFirstGTaskDelay = GetZeroOrOne(property);
+                        break;
                     case "Skip":
                         Config.RSPG.Skip = GetZeroOrOne(property);
                         break;
@@ -453,6 +516,9 @@ namespace VCN64Config
                     case "BlockSize":
                         Config.Cmp.BlockSize = GetHex(property);
                         break;
+                    case "CmpLimit":
+                        Config.Cmp.CmpLimit = GetZeroOrOne(property);
+                        break;
                     case "FrameBlockLimit":
                         Config.Cmp.FrameBlockLimit = GetHex(property);
                         break;
@@ -464,6 +530,37 @@ namespace VCN64Config
                         break;
                     default:
                         throw new Exception("Syntactic analyzer [Cmp] line " + Lex.Line.ToString() + ": Unexpected property \"" + property + "\".");
+                }
+                Next();
+            }
+        }
+
+        private void SectionTempConfig()
+        {
+            while (Current.Label == KeyLabel.PropertyTempConfig)
+            {
+                string property = Current.ToString();
+                Next();
+                Match(KeyLabel.Assignment);
+                switch (property)
+                {
+                    case "g_nN64CpuPC":
+                        Config.TempConfig.g_nN64CpuPC = GetZeroOrOne(property);
+                        break;
+                    case "n64MemAcquireForground":
+                        Config.TempConfig.n64MemAcquireForground = GetZeroOrOne(property);
+                        break;
+                    case "n64MemDefaultRead32MemTest":
+                        Config.TempConfig.n64MemDefaultRead32MemTest = GetZeroOrOne(property);
+                        break;
+                    case "n64MemReleaseForground":
+                        Config.TempConfig.n64MemReleaseForground = GetZeroOrOne(property);
+                        break;
+                    case "RSPGDCFlush":
+                        Config.TempConfig.RSPGDCFlush = GetZeroOrOne(property);
+                        break;
+                    default:
+                        throw new Exception("Syntactic analyzer [TempConfig] line " + Lex.Line.ToString() + ": Unexpected property \"" + property + "\".");
                 }
                 Next();
             }
@@ -493,19 +590,6 @@ namespace VCN64Config
             }
             //else
                 //throw new Exception("Syntactic analyzer [VI] line " + Lex.Line.ToString() + ": Unexpected property.");
-        }
-
-        private void SectionTempConfig()
-        {
-            if (Current.Label == KeyLabel.PropertyTempConfig)
-            {
-                Next();
-                Match(KeyLabel.Assignment);
-                Config.Others.RSPGDCFlush = GetZeroOrOne("RSPGDCFlush");
-                Next();
-            }
-            //else
-                //throw new Exception("Syntactic analyzer [TempConfig] line " + Lex.Line.ToString() + ": Unexpected property.");
         }
 
         private void SectionFrameTickHack()

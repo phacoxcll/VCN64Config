@@ -23,10 +23,10 @@ namespace VCN64Config
             Words.Add("Sound", KeyLabel.Section);
             Words.Add("Input", KeyLabel.Section);
             Words.Add("RSPG", KeyLabel.Section);
-            Words.Add("Cmp", KeyLabel.Section);            
+            Words.Add("Cmp", KeyLabel.Section);
+            Words.Add("TempConfig", KeyLabel.Section);
             Words.Add("SI", KeyLabel.Section);
             Words.Add("VI", KeyLabel.Section);
-            Words.Add("TempConfig", KeyLabel.Section);
             Words.Add("FrameTickHack", KeyLabel.Section);
             Words.Add("Idle", KeyLabel.Section);
             Words.Add("InsertIdleInst", KeyLabel.Section);
@@ -38,12 +38,17 @@ namespace VCN64Config
             Words.Add("Cheat", KeyLabel.Cheat);
 
             Words.Add("AIIntPerFrame", KeyLabel.PropertyRomOption);
+            Words.Add("AISetControl", KeyLabel.PropertyRomOption);
+            Words.Add("AISetDAC", KeyLabel.PropertyRomOption);
+            Words.Add("AISetRateBit", KeyLabel.PropertyRomOption);
             Words.Add("AIUseTimer", KeyLabel.PropertyRomOption);
             Words.Add("BackupSize", KeyLabel.PropertyRomOption);
             Words.Add("BackupType", KeyLabel.PropertyRomOption);
+            Words.Add("BootEnd", KeyLabel.PropertyRomOption);
             Words.Add("BootPCChange", KeyLabel.PropertyRomOption);
             Words.Add("CmpBlockAdvFlag", KeyLabel.PropertyRomOption);
             Words.Add("EEROMInitValue", KeyLabel.PropertyRomOption);
+            Words.Add("g_nN64CpuCmpBlockAdvFlag", KeyLabel.PropertyRomOption);
             Words.Add("MemPak", KeyLabel.PropertyRomOption);
             Words.Add("NoCntPak", KeyLabel.PropertyRomOption);
             Words.Add("PDFURL", KeyLabel.PropertyRomOption);
@@ -51,18 +56,24 @@ namespace VCN64Config
             Words.Add("RamSize", KeyLabel.PropertyRomOption);
             Words.Add("RetraceByVsync", KeyLabel.PropertyRomOption);
             Words.Add("RomType", KeyLabel.PropertyRomOption);
-            Words.Add("RSPMultiCore", KeyLabel.PropertyRomOption);
             Words.Add("RSPAMultiCoreWait", KeyLabel.PropertyRomOption);
+            Words.Add("RSPMultiCore", KeyLabel.PropertyRomOption);
+            Words.Add("RSPMultiCoreInt", KeyLabel.PropertyRomOption);
+            Words.Add("RSPMultiCoreWait", KeyLabel.PropertyRomOption);
             Words.Add("Rumble", KeyLabel.PropertyRomOption);
             Words.Add("ScreenCaptureNG", KeyLabel.PropertyRomOption);
             Words.Add("TicksPerFrame", KeyLabel.PropertyRomOption);
             Words.Add("TimeIntDelay", KeyLabel.PropertyRomOption);
+            Words.Add("TLBMissEnable", KeyLabel.PropertyRomOption);
+            Words.Add("TPak", KeyLabel.PropertyRomOption);
             Words.Add("TrueBoot", KeyLabel.PropertyRomOption);
             Words.Add("UseTimer", KeyLabel.PropertyRomOption);
 
+            Words.Add("bCutClip", KeyLabel.PropertyRender);
             Words.Add("bForce720P", KeyLabel.PropertyRender);
             Words.Add("CalculateLOD", KeyLabel.PropertyRender);
             Words.Add("CanvasWidth", KeyLabel.PropertyRender);
+            Words.Add("CanvasHeight", KeyLabel.PropertyRender);
             Words.Add("CheckTlutValid", KeyLabel.PropertyRender);
             Words.Add("ClearVertexBuf", KeyLabel.PropertyRender);
             Words.Add("ClipBottom", KeyLabel.PropertyRender);
@@ -71,26 +82,35 @@ namespace VCN64Config
             Words.Add("ClipTop", KeyLabel.PropertyRender);
             Words.Add("ConstValue", KeyLabel.PropertyRender);
             Words.Add("CopyAlphaForceOne", KeyLabel.PropertyRender);
-            Words.Add("CopyColorBuffer", KeyLabel.PropertyRender);
             Words.Add("CopyColorAfterTask", KeyLabel.PropertyRender);
+            Words.Add("CopyColorBuffer", KeyLabel.PropertyRender);
             Words.Add("CopyDepthBuffer", KeyLabel.PropertyRender);
             Words.Add("CopyMiddleBuffer", KeyLabel.PropertyRender);
+            Words.Add("DepthCompare", KeyLabel.PropertyRender);
             Words.Add("DepthCompareLess", KeyLabel.PropertyRender);
+            Words.Add("DepthCompareMore", KeyLabel.PropertyRender);
             Words.Add("DoubleFillCheck", KeyLabel.PropertyRender);
             Words.Add("FirstFrameAt", KeyLabel.PropertyRender);
             Words.Add("FlushMemEachTask", KeyLabel.PropertyRender);
             Words.Add("FogVertexAlpha", KeyLabel.PropertyRender);
             Words.Add("ForceFilterPoint", KeyLabel.PropertyRender);
             Words.Add("ForceRectFilterPoint", KeyLabel.PropertyRender);
+            Words.Add("FrameClearCacheInit", KeyLabel.PropertyRender);
             Words.Add("InitPerspectiveMode", KeyLabel.PropertyRender);
             Words.Add("NeedPreParse", KeyLabel.PropertyRender);
             Words.Add("NeedTileSizeCheck", KeyLabel.PropertyRender);
             Words.Add("PolygonOffset", KeyLabel.PropertyRender);
             Words.Add("PreparseTMEMBlock", KeyLabel.PropertyRender);
+            Words.Add("RendererReset", KeyLabel.PropertyRender);
+            Words.Add("TexEdgeAlpha", KeyLabel.PropertyRender);
             Words.Add("TileSizeCheckSpecial", KeyLabel.PropertyRender);
             Words.Add("TLUTCheck", KeyLabel.PropertyRender);
             Words.Add("UseColorDither", KeyLabel.PropertyRender);
+            Words.Add("useViewportXScale", KeyLabel.PropertyRender);
+            Words.Add("useViewportYScale", KeyLabel.PropertyRender);
             Words.Add("useViewportZScale", KeyLabel.PropertyRender);
+            Words.Add("XClip", KeyLabel.PropertyRender);
+            Words.Add("YClip", KeyLabel.PropertyRender);
             Words.Add("ZClip", KeyLabel.PropertyRender);
 
             Words.Add("BufFull", KeyLabel.PropertySound);
@@ -109,18 +129,25 @@ namespace VCN64Config
             Words.Add("RDPDelay", KeyLabel.PropertyRSPG);
             Words.Add("RDPInt", KeyLabel.PropertyRSPG);
             Words.Add("RIntAfterGTask", KeyLabel.PropertyRSPG);
+            Words.Add("RSPGWaitOnlyFirstGTaskDelay", KeyLabel.PropertyRSPG);
             Words.Add("Skip", KeyLabel.PropertyRSPG);
             Words.Add("WaitDelay", KeyLabel.PropertyRSPG);
             Words.Add("WaitOnlyFirst", KeyLabel.PropertyRSPG);
 
             Words.Add("BlockSize", KeyLabel.PropertyCmp);
+            Words.Add("CmpLimit", KeyLabel.PropertyCmp);
             Words.Add("FrameBlockLimit", KeyLabel.PropertyCmp);
             Words.Add("OptEnable", KeyLabel.PropertyCmp);
             Words.Add("W32OverlayCheck", KeyLabel.PropertyCmp);
 
+            Words.Add("g_nN64CpuPC", KeyLabel.PropertyTempConfig);
+            Words.Add("n64MemAcquireForground", KeyLabel.PropertyTempConfig);
+            Words.Add("n64MemDefaultRead32MemTest", KeyLabel.PropertyTempConfig);
+            Words.Add("n64MemReleaseForground", KeyLabel.PropertyTempConfig);
+            Words.Add("RSPGDCFlush", KeyLabel.PropertyTempConfig);
+
             Words.Add("SIDelay", KeyLabel.PropertySI);
             Words.Add("ScanReadTime", KeyLabel.PropertyVI);
-            Words.Add("RSPGDCFlush", KeyLabel.PropertyTempConfig);
             Words.Add("Hack", KeyLabel.PropertyFrameTickHack);
 
             Words.Add("Count", KeyLabel.PropertyCount);
@@ -208,6 +235,14 @@ namespace VCN64Config
             for (; ; Read())
             {
                 if (char.IsLetter(Lookahead) || Lookahead == '_')
+                    strBuilder.Append(Lookahead);
+                else if (strBuilder.ToString() == "g_nN" && Lookahead == '6')
+                    strBuilder.Append(Lookahead);
+                else if (strBuilder.ToString() == "g_nN6" && Lookahead == '4')
+                    strBuilder.Append(Lookahead);
+                else if (strBuilder.ToString() == "n" && Lookahead == '6')
+                    strBuilder.Append(Lookahead);
+                else if (strBuilder.ToString() == "n6" && Lookahead == '4')
                     strBuilder.Append(Lookahead);
                 else if (strBuilder.ToString() == "bForce" && Lookahead == '7')
                     strBuilder.Append(Lookahead);
