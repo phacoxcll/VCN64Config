@@ -2,7 +2,7 @@
 
 Each N64 game requires a configuration file to function properly in the Wii U Virtual Console, this program makes it easy to create and edit these configuration files.
 
-The Wii U N64 Virtual Console configuration file is the one found in "WiiUN64Game\content\config\[rom name].ini" where [rom name] is the name of the file found in "WiiUN64Game\content\rom" folder.
+The Wii U N64 Virtual Console configuration file is the one found in "WiiUN64Game\content\config\\[rom name].ini" where [rom name] is the name of the file found in "WiiUN64Game\content\rom" folder.
 
 ## Template of a configuration file
 
